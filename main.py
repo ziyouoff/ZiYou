@@ -41,6 +41,12 @@ except:
     from rich.layout import Layout
     from rich.tree import Tree
 
+try:
+    import pendulum
+except:
+    os.system('pip install pendulum')
+    import pendulum
+
 ############################################################
 ############################################################
 ############################################################
@@ -328,8 +334,8 @@ def install():
         data['ach_RTX'] = '1'
         with open("save","wb") as save:
             pickle.dump(data,save)
-        print('fxbdrf dsgjkytyf')
         install()
+
 
     try: 
         if install_input == 'L1': 
@@ -391,7 +397,6 @@ def install():
 
 
 
-
     try: 
         if install_input == 'L6': 
             os.system('apt install tshark')
@@ -401,8 +406,6 @@ def install():
             install()
     except:
         print(colored('[!]tshark не установлен', "red"))
-
-
 
 
     try: 
@@ -416,7 +419,6 @@ def install():
         print(colored('[!]nmap не установлен', "red"))
 
 
-
     try: 
         if install_input == 'L8': 
             os.system('pip install scapy')
@@ -427,6 +429,7 @@ def install():
     except:
         print(colored('[!]scapy не уствноылен', "red"))
 
+
     try: 
         if install_input == 'L9': 
             os.system('pip install gdown')
@@ -436,6 +439,7 @@ def install():
             install()
     except:
         print(colored('[!]GDown не уствноылен', "red"))
+
 
     try: 
         if install_input == 'L10': 
@@ -474,6 +478,7 @@ def install():
         print(colored('zdravcity.ru_1 [01.2023] не установлен', "red"))
         install()
 
+
     try:
         if install_input == 'B2': 
             download_db('https://drive.google.com/file/d/1bxGXVgvroNRdnWZVO9guYWzTD-OHZ48S/view?usp=sharing', 'Tele2.ru (06.2022).csv')
@@ -484,6 +489,7 @@ def install():
         uclear()
         print(colored('Tele2.ru [06.2022] не установлен', "red"))
         install()
+
 
     try:
         if install_input == 'B3': 
@@ -496,6 +502,7 @@ def install():
         print(colored('База паспортов 1 не установлен', "red"))
         install()
 
+
     try:
         if install_input == 'B4': 
             download_db('https://drive.google.com/file/d/1C_jPgbbzirs3a_I0v6w3SIIkmaqZf7w1/view?usp=sharing', 'gemotest.csv')
@@ -506,6 +513,7 @@ def install():
         uclear()
         print(colored('gemotest не установлен', "red"))
         install()
+
 
     try:
         if install_input == 'B5': 
@@ -518,6 +526,7 @@ def install():
         print(colored('DNS [09.2022] не установлен', "red"))
         install()
 
+
     try:
         if install_input == 'B6': 
             download_db('https://drive.google.com/file/d/138ConTpQAtB43SRAD3Uxh1zMNzqlGXvA/view?usp=sharing', 'tg_base_1.txt')
@@ -528,6 +537,7 @@ def install():
         uclear()
         print(colored('Telegram база 1 не установлена', "red"))
         install()
+
 
     try:
         if install_input == 'B7': 
@@ -540,6 +550,7 @@ def install():
         print(colored('Telegram база 2(Глаз бога) не установлена', "red"))
         install()
 
+
     try:
         if install_input == 'B8': 
             download_db('https://drive.google.com/file/d/1ALni_Pt2qDrUU59uNpSa2MjfKy_EaW0I/view?usp=sharing', 'tg_base_3(chelabinsk).csv')
@@ -551,6 +562,7 @@ def install():
         print(colored('Telegram база 3(Челябинмк) не установлена', "red"))
         install()
 
+
     try:
         if install_input == 'B9': 
             download_db('https://drive.google.com/file/d/15WI8rEM5SLXdLQGjxi0DMQspGZpqgtjB/view?usp=sharing', 'ru_base.csv')
@@ -561,6 +573,7 @@ def install():
         uclear()
         print(colored('База не установлена', "red"))
         install()
+
 
     try:
         if install_input == 'B10': 
@@ -672,6 +685,7 @@ def main_menu():
     mm_9 =  colored('├[4] - FlipperNull         ├[9] - AirDos             |', 'blue')
     mm_10 = colored('├[5] - SQLmap              ├[10] - ???               |', 'cyan')
     mm_11 = colored('└──────────────────────────┸─────────────────────────┘', "blue")
+    
     
     print(Center.XCenter(mm_1))
     print(Center.XCenter(mm_2))
@@ -919,27 +933,27 @@ elif osname == 'posix':
     os.system('rm -rf base_creater.py')
     os.system('rm -rf data.pkl')
 
-
+console = Console()
 uclear()
 print('\n\n\n\n\n\n\n\n\n')
-print(Center.XCenter(colored('╔═════════════════════════════════════════════════════════════╗', 'yellow')))
-print(Center.XCenter(colored('║                         ИНФОРМАЦИЯ                          ║', 'yellow')))
-print(Center.XCenter(colored('╠═════════════════════════════════════════════════════════════╣', 'yellow')))
-print(Center.XCenter(colored('║Имея данный софт вы обязаны соблюдать следующие правила      ║', 'yellow')))
-print(Center.XCenter(colored('║                                                             ║', 'yellow')))
-print(Center.XCenter(colored('║1)Принимаете ответственность за все свои действия на себя.   ║', 'yellow')))
-print(Center.XCenter(colored('║2)Обязуетесь в случае публикованиях программы на различных   ║', 'yellow')))
-print(Center.XCenter(colored('║информационных информационных ресурсов указывать тгк автора  ║', 'yellow')))
-print(Center.XCenter(colored('║https://t.me/ziyou_off   либо  https://t.me/+To5Lgt_Fx70zZDMy║', 'yellow')))
-print(Center.XCenter(colored('║3)Не выодовать себя за автора программы                      ║', 'yellow')))
-print(Center.XCenter(colored('║4)Так же категорически запрещается продавть данную программу ║', 'yellow')))
-print(Center.XCenter(colored('╚═════════════════════════════════════════════════════════════╝', 'yellow')))
+console.print('╔═════════════════════════════════════════════════════════════╗', style="yellow", justify="center")
+console.print('║                         ИНФОРМАЦИЯ                          ║', style="yellow", justify="center")
+console.print('╠═════════════════════════════════════════════════════════════╣', style="yellow", justify="center")
+console.print('║Имея данный софт вы обязаны соблюдать следующие правила      ║', style="yellow", justify="center")
+console.print('║                                                             ║', style="yellow", justify="center")
+console.print('║1)Принимаете ответственность за все свои действия на себя.   ║', style="yellow", justify="center")
+console.print('║2)Обязуетесь в случае публикованиях программы на различных   ║', style="yellow", justify="center")
+console.print('║информационных информационных ресурсов указывать тгк автора  ║', style="yellow", justify="center")
+console.print('║https://t.me/ziyou_off   либо  https://t.me/+To5Lgt_Fx70zZDMy║', style="yellow", justify="center")
+console.print('║3)Не выодовать себя за автора программы                      ║', style="yellow", justify="center")
+console.print('║4)Так же категорически запрещается продавть данную программу ║', style="yellow", justify="center")
+console.print('╚═════════════════════════════════════════════════════════════╝', style="yellow", justify="center")
 print('\n\n\n')
-print(Center.XCenter(colored('╔═══════════════════════════════════════════════════╗', 'red')))
-print(Center.XCenter(colored('║Ведите [L] Чтобы открыть официльный канал c паролем║', 'red')))
-print(Center.XCenter(colored('╚═══════════════════════════════════════════════════╝', 'red')))                             
+console.print('╔═══════════════════════════════════════════════════╗', style="red", justify="center")
+console.print('║Ведите [L] Чтобы открыть официльный канал c паролем║', style="red", justify="center")
+console.print('╚═══════════════════════════════════════════════════╝', style="red", justify="center")                             
 print('\n\n\n')                            
-in_pw = input(Center.XCenter(colored('[@]ВВЕДИТЕ ПАРОЛЬ: ', 'red')))
+in_pw = input(Center.XCenter(colored('          [@]ВВЕДИТЕ ПАРОЛЬ >> ', 'red')))
 if in_pw == 'pepe776':
     console = Console()
     try:
