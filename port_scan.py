@@ -17,6 +17,7 @@ try:
 except:
     os.system('pip install socket')
 
+
 #############################################################
 #############################################################
 #############################################################
@@ -26,7 +27,7 @@ table.add_column("port", style="cyan", no_wrap=True)
 table.add_column("name", style="magenta")
 table.add_column("status", justify="right", style="yellow")
 
-ports = {
+ports_names = {
     20: "FTP-DATA", 21: "FTP", 22: "SSH", 23: "Telnet",
     25: "SMTP", 43: "WHOIS", 53: "DNS", 80: "http",
     115: "SFTP", 123: "NTP", 143: "IMAP", 161: "SNMP",
@@ -41,8 +42,9 @@ ports = {
 
 def port_scan():
     console = Console()
+
     def chek_port(ip, port):
-        try: port_name = ports[port]
+        try: port_name = ports_names[port]
         except:port_name = 'NN'
 
         client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -53,17 +55,32 @@ def port_scan():
         else:
             table.add_row(str(port), port_name, "✅open")
 
-    ip = input(Center.XCenter(colored('[+]Введите ip для скана портов: ', "red")))
-    count_port = [int(count_port) for count_port in input(Center.XCenter(colored('[+]Ввелиье количество портов для скана: ', "red"))).split(', ')]
-    print(count_port)
 
+    ip = input(Center.XCenter(colored('[+]Введите ip для сканирования портов: ', "red")))
+    ports = [ports for ports in input(Center.XCenter(colored('[+]Ввелиье портоы для скана: ', "red"))).split(', ')]
+
+    ports_for_scan = []
+    for port in ports:
+        if '-' in port:
+            port_split = []
+            port_split = port.split('-')
+
+            last_in_port_split_P1 = int(port_split[-1]) + 1
+            first_in_port_split = int(port_split[0])
+
+            for i in range(first_in_port_split, last_in_port_split_P1):
+                ports_for_scan.append(int(i))
+        else:
+            ports_for_scan.append(int(port))
     
-    for i in count_port:
-        chek_port(ip, i)
+    console.print(ports_for_scan)
+    
+    for port in ports_for_scan:
+        chek_port(ip, port)
         uclear()
         print('\n\n\n\n\n\n\n\n')
         console.print('ip: ' + str(ip), justify="center", style="red")
-        console.print('ports: ' + str(count_port), justify="center", style="red")
+        console.print('ports: ' + str(ports_for_scan), justify="center", style="red")
         console.print(table, justify='center')
     
 
