@@ -22,8 +22,7 @@ except:
     os.system('pip install pystyle')
     from pystyle import Center
 
-try:
-    from termcolor import colored
+try: from termcolor import colored
 except:
     os.system('pip install termcolor')
     from termcolor import colored
@@ -40,12 +39,7 @@ except:
     from rich.console import Console
     from rich.layout import Layout
     from rich.tree import Tree
-
-try:
-    import pendulum
-except:
-    os.system('pip install pendulum')
-    import pendulum
+    from rich.panel import Panel
 
 ############################################################
 ############################################################
@@ -672,256 +666,281 @@ def install():
     
 
 def main_menu():
+    with open('save', 'rb') as file:
+        data = pickle.load(file)
     uclear()
-    baners.print_start()
-    mm_1 =  colored('┌────────────────────────────────────────────────────┐', "red")
-    mm_2 =  colored('|                    Главное Меню                    |', "red")
-    mm_3 =  colored('├──────────────────────────┬─────────────────────────┤', "red")
-    mm_4 =  colored('├[e] - exit                ├[i] - info               |', "red")
-    mm_5 =  colored('├[s] - setings             ├[d] - install            |', "red")
-    mm_6 =  colored('├[1] - Узнать ip telegram  ├[6] - WiFite 3           |', "cyan")
-    mm_7 =  colored('├[2] - ZiMap               ├[7] - Пробив по базам    |', 'blue')
-    mm_8 =  colored('├[3] - SMS-Bomber          ├[8] - DoS                |', 'cyan')
-    mm_9 =  colored('├[4] - FlipperNull         ├[9] - AirDos             |', 'blue')
-    mm_10 = colored('├[5] - SQLmap              ├[10] - ???               |', 'cyan')
-    mm_11 = colored('└──────────────────────────┸─────────────────────────┘', "blue")
-    
-    
-    print(Center.XCenter(mm_1))
-    print(Center.XCenter(mm_2))
-    print(Center.XCenter(mm_3))
-    print(Center.XCenter(mm_4))
-    print(Center.XCenter(mm_5))
-    print(Center.XCenter(mm_6))
-    print(Center.XCenter(mm_7))
-    print(Center.XCenter(mm_8))
-    print(Center.XCenter(mm_9))
-    print(Center.XCenter(mm_10))
-    print(Center.XCenter(mm_11))
+    if data['devise'] == 'M' or 'P':
+        baners.primt_PC_baner_old()
+        console.print('┌────────────────────────────────────────────────────┐', style = "red", justify="center")
+        console.print('|                    Главное Меню                    |', style = "red", justify="center")
+        console.print('├──────────────────────────┬─────────────────────────┤', style = "red", justify="center")
+        console.print('├(e) - exit                ├(i) - info               |', style = "red", justify="center")
+        console.print('├(s) - setings             ├(d) - install            |', style = "red", justify="center")
+        console.print('├[1] - Узнать ip telegram  ├[6] - WiFite 3           |', style = "cyan", justify="center")
+        console.print('├[2] - ZiMap               ├[7] - Пробив по базам    |', style = "blue", justify="center")
+        console.print('├[3] - SMS-Bomber          ├[8] - DoS                |', style = "cyan", justify="center")
+        console.print('├[4] - FlipperNull         ├[9] - AirDos             |', style = "blue", justify="center")
+        console.print('├[5] - SQLmap              ├[10] - WebBuster         |', style = "cyan", justify="center")
+        console.print('├[11] - ArpSpoof           ├[12] - Snifer            |', style = "blue", justify="center")
+        console.print('└──────────────────────────┸─────────────────────────┘', style = "cyan", justify="center")
 
-    print('')
-	
-    #input_text = Center.XCenter()"""\n[+]> """, "red"
-    select = input(Center.XCenter(colored("""\n[+]Select> """, "red")))
+        print('')
+    
+        #input_text = Center.XCenter()"""\n[+]> """, "red"
+        select = input(Center.XCenter(colored("""\n[+]Select >> """, "red")))
 
+
+###########################################################################################
+#? ██╗
+#?███║
+#?╚██║
+#? ██║
+#? ██║
+#? ╚═╝
+        if select == '1':                                                                     
+            from tgip import main                                                             
+            uclear()                                                                          
+            baners.print_start()
+            main()
+
+            console.print(baners.menu_or_exit_text, style='cyan', justify='center')
+
+            mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
+
+            if mrnu_or_exit == '1':
+                baners.print_start()
+                main_menu()
+
+            elif mrnu_or_exit == '2':
+                baners.print_bye_bye
+                exit
     
 ###########################################################################################
-                                                                                          
-    if select == '1':                                                                     
-        from tgip import main                                                             
-        uclear()                                                                          
-        baners.print_start()
-        main()
-                    
-        console.print(baners.menu_or_exit_text, style='cyan', justify='center')
+#?██████╗ 
+#?╚════██╗
+#? █████╔╝
+#?██╔═══╝ 
+#?███████╗
+#?╚══════╝
+        elif select == '2':
+            import port_scan
+            port_scan.main()
 
-        mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
+            console.print(baners.menu_or_exit_text, style='cyan', justify='center')
 
-        if mrnu_or_exit == '1':
-            baners.print_start()
-            main_menu()
+            mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
 
-        elif mrnu_or_exit == '2':
-            baners.print_bye_bye
-            exit
-	
-###########################################################################################
+            if mrnu_or_exit == '1':
+                baners.print_start()
+                main_menu()
 
-    elif select == '2':
-        import port_scan
-        port_scan.main()
-
-        console.print(baners.menu_or_exit_text, style='cyan', justify='center')
-
-        mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
-
-        if mrnu_or_exit == '1':
-            baners.print_start()
-            main_menu()
-
-        elif mrnu_or_exit == '2':
-            baners.print_bye_bye
-            exit
-        
-#################################################
-
-    elif select == '3':
-        from bomber import start_bomber
-        uclear()
-        baners.print_start()
-        start_bomber()
-            
-        console.print(baners.menu_or_exit_text, style='cyan', justify='center')
-
-        mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
-
-        if mrnu_or_exit == '1':
-            baners.print_start()
-            main_menu()
-
-        elif mrnu_or_exit == '2':
-            baners.print_bye_bye
-            exit
+            elif mrnu_or_exit == '2':
+                baners.print_bye_bye
+                exit
 
 #################################################
-
-    elif select == '4':
-        from FlipperNull import FlipperNull
-        uclear()
-        baners.print_start()
-        FlipperNull()
-            
-        console.print(baners.menu_or_exit_text, style='cyan', justify='center')
-
-        mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
-
-        if mrnu_or_exit == '1':
+#?██████╗ 
+#?╚════██╗
+#? █████╔╝
+#? ╚═══██╗
+#?██████╔╝
+#?╚═════╝ 
+        elif select == '3':
+            from bomber import start_bomber
+            uclear()
             baners.print_start()
-            main_menu()
+            start_bomber()
 
-        elif mrnu_or_exit == '2':
-            baners.print_bye_bye
-            exit
+            console.print(baners.menu_or_exit_text, style='cyan', justify='center')
+
+            mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
+
+            if mrnu_or_exit == '1':
+                baners.print_start()
+                main_menu()
+
+            elif mrnu_or_exit == '2':
+                baners.print_bye_bye
+                exit
+
+#################################################
+#?██╗  ██╗
+#?██║  ██║
+#?███████║
+#?╚════██║
+#?     ██║
+#?     ╚═╝
+        elif select == '4':
+            from FlipperNull import FlipperNull
+            uclear()
+            baners.print_start()
+            FlipperNull()
+
+            console.print(baners.menu_or_exit_text, style='cyan', justify='center')
+
+            mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
+
+            if mrnu_or_exit == '1':
+                baners.print_start()
+                main_menu()
+
+            elif mrnu_or_exit == '2':
+                baners.print_bye_bye
+                exit
+
+#################################################
+#?███████╗
+#?██╔════╝
+#?███████╗
+#?╚════██║
+#?███████║
+#?╚══════╝
+        elif select == '5':
+            print(colored('[!]В разарботке', "red"))
+
+            console.print(baners.menu_or_exit_text, style='cyan', justify='center')
+
+            mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
+
+            if mrnu_or_exit == '1':
+                baners.print_start()
+                main_menu()
+
+            elif mrnu_or_exit == '2':
+                baners.print_bye_bye
+                exit
+
+#################################################
+#? ██████╗ 
+#?██╔════╝ 
+#?███████╗ 
+#?██╔═══██╗
+#?╚██████╔╝
+#? ╚═════╝ 
+        elif select == '6':
+            uclear()
+            start_serch()
+
+            console.print(baners.menu_or_exit_text, style='cyan', justify='center')
+
+            mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
+
+            if mrnu_or_exit == '1':
+                baners.print_start()
+                main_menu()
+
+            elif mrnu_or_exit == '2':
+                baners.print_bye_bye()
+                exit
+
+#################################################
+#?███████╗
+#?╚════██║
+#?    ██╔╝
+#?   ██╔╝ 
+#?   ██║  
+#?   ╚═╝  
+        elif select == '7':
+            uclear()
+            start_serch()
+            mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
+
+            if mrnu_or_exit == '1':
+                baners.print_start()
+                main_menu()
+
+            elif mrnu_or_exit == '2':
+                baners.print_bye_bye()
+                exit
+
+#################################################
+#? █████╗ 
+#?██╔══██╗
+#?╚█████╔╝
+#?██╔══██╗
+#?╚█████╔╝
+#? ╚════╝ 
+        elif select == '8':
+            import ddos
+            uclear()
+            ddos.start_DDoS()
+            console.print(baners.menu_or_exit_text, style='cyan', justify='center')
+
+            mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
+
+            if mrnu_or_exit == '1':
+                baners.print_start()
+                main_menu()
+
+            elif mrnu_or_exit == '2':
+                baners.print_bye_bye()
+                exit
+
+#################################################
+#? █████╗ 
+#?██╔══██╗
+#?╚██████║
+#? ╚═══██║
+#? █████╔╝
+#? ╚════╝ 
+        elif select == '9':
+            print(colored('[!]В разарботке', "red"))
+            console.print(baners.menu_or_exit_text, style='cyan', justify='center')
+            mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
+            if mrnu_or_exit == '1':
+                baners.print_start()
+                main_menu()
+            elif mrnu_or_exit == '2':
+                baners.print_bye_bye()
+                exit
+
+#################################################
+#? ██╗ ██████╗ 
+#?███║██╔═████╗
+#?╚██║██║██╔██║
+#? ██║████╔╝██║
+#? ██║╚██████╔╝
+#? ╚═╝ ╚═════╝ 
+        elif select == '10':
+            from softs import dirbuster
+            uclear()
+            dirbuster.main()
+            console.print(baners.menu_or_exit_text, style='cyan', justify='center')
+            mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
+            if mrnu_or_exit == '1':
+                baners.print_start()
+                main_menu()
+            elif mrnu_or_exit == '2':
+                baners.print_bye_bye()
+                exit
+
 
 #################################################
 
-    elif select == '5':
-        print(colored('[!]В разарботке', "red"))
-            
-        console.print(baners.menu_or_exit_text, style='cyan', justify='center')
-
-        mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
-
-        if mrnu_or_exit == '1':
-            baners.print_start()
-            main_menu()
-
-        elif mrnu_or_exit == '2':
-            baners.print_bye_bye
-            exit
-
-#################################################
-
-    elif select == '6':
-        uclear()
-        start_serch()
-            
-        console.print(baners.menu_or_exit_text, style='cyan', justify='center')
-
-        mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
-
-        if mrnu_or_exit == '1':
-            baners.print_start()
-            main_menu()
-
-        elif mrnu_or_exit == '2':
+        elif select == 's':
+            setings()
+        elif select == 'd':
+            install()
+        elif select == 'i': 
+            baners.soft_info()
+            console.print(baners.menu_or_exit_text, style='cyan', justify='center')
+            mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
+            if mrnu_or_exit == '1':
+                baners.print_start()
+                main_menu()
+            elif mrnu_or_exit == '2':
+                baners.print_bye_bye()
+                exit
+        elif select == 'e':
+            uclear()
             baners.print_bye_bye()
-            exit
-
-#################################################
-
-    elif select == '7':
-        uclear()
-        start_serch()
-            
-        
-
-        mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
-
-        if mrnu_or_exit == '1':
-            baners.print_start()
+            exit()
+        else: 
+            uclear()
             main_menu()
 
-        elif mrnu_or_exit == '2':
-            baners.print_bye_bye()
-            exit
-
-#################################################
-
-    elif select == '8':
-        import ddos
-        uclear()
-        ddos.start_DDoS()
-            
-        console.print(baners.menu_or_exit_text, style='cyan', justify='center')
-
-        mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
-
-        if mrnu_or_exit == '1':
-            baners.print_start()
-            main_menu()
-
-        elif mrnu_or_exit == '2':
-            baners.print_bye_bye()
-            exit
-
-#################################################
-
-    elif select == '9':
-        print(colored('[!]В разарботке', "red"))
-            
-        console.print(baners.menu_or_exit_text, style='cyan', justify='center')
-
-        mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
-
-        if mrnu_or_exit == '1':
-            baners.print_start()
-            main_menu()
-
-        elif mrnu_or_exit == '2':
-            baners.print_bye_bye()
-            exit
-
-#################################################
-
-    elif select == '10':
-        with open('data.pkl', 'rb') as file:
-            data = pickle.load(file)  
-            print(data['devise'])
-
-        console.print(baners.menu_or_exit_text, style='cyan', justify='center')
-
-        mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
-
-        if mrnu_or_exit == '1':
-            baners.print_start()
-            main_menu()
-
-        elif mrnu_or_exit == '2':
-            baners.print_bye_bye()
-            exit
-
-
-#################################################
-
-    elif select == 's':
-        setings()
-
-    elif select == 'd':
-        install()
-
-    elif select == 'i': 
-        baners.soft_info()
-        console.print(baners.menu_or_exit_text, style='cyan', justify='center')
-        mrnu_or_exit = input(Center.XCenter(colored("""\n[+]Select>""", 'cyan')))
-
-        if mrnu_or_exit == '1':
-            baners.print_start()
-            main_menu()
-
-        elif mrnu_or_exit == '2':
-            baners.print_bye_bye()
-            exit
-
-    elif select == 'e':
-        uclear()
-        baners.print_bye_bye()
-        exit()
-
-    
-    else: 
-        uclear()
-        main_menu()
+    elif data['devise'] == 'P':
+        baners.print_new_pc_main_menu()
 
 osname = os.name
 if osname == 'nt':
@@ -953,7 +972,7 @@ console.print('╔════════════════════�
 console.print('║Ведите [L] Чтобы открыть официльный канал c паролем║', style="red", justify="center")
 console.print('╚═══════════════════════════════════════════════════╝', style="red", justify="center")                             
 print('\n\n\n')                            
-in_pw = input(Center.XCenter(colored('          [@]ВВЕДИТЕ ПАРОЛЬ >> ', 'red')))
+in_pw = console.input(Center.XCenter('[red][+]ВВЕДИТЕ ПАРОЛЬ >> [/]'), password=True)
 if in_pw == 'pepe776':
     console = Console()
     try:
@@ -963,7 +982,7 @@ if in_pw == 'pepe776':
         data = {'devise': 'M',
                 'base_out': 'T',
                 'hello_anim': '1',
-                'version': '1.6.0',
+                'version': '1.7.0',
 
                 'ach_RTX': '0',
                 'ach_kali': '0'}
@@ -989,3 +1008,4 @@ else:
     print(Center.XCenter(colored('╚═════════════════════╝', 'red')))
     exit()
     
+ 

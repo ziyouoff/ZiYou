@@ -1,5 +1,5 @@
 import os
-
+from rich.console import Console
 try:
   from termcolor import colored
 except:
@@ -392,7 +392,7 @@ ziyou_1 = '''
 ░░░░░░░░░░░░░░░░░░░/ /| | | | |/ _ \| | | |░░░░░░░░░░░░░░░░░
 ░░░░░░░░░░░░░░░░░░/ /_| | |_| | (_) | |_| |░░░░░░░░░░░░░░░░░
 ░░░░░░░░░░░░░░░░░/____|_|\__, |\___/ \__,_|░░░░░░░░░░░░░░░░░
-░░░░░░░░░░░░░░░░░░░░░░░░░|___/░Version 1.4.3░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░|___/░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
                     ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
                     ▄Telegtam: @ziyouoff▄
@@ -423,8 +423,7 @@ _______________\:::\____\/::\   \/:::/  \:::\____\    /::::::::::\____\|:::|____
       \:::\    \               \:::\    \                                     \::::/    /             \::::::/    /      
        \:::\____\               \:::\____\                                     \::/____/               \::::/    /       
         \::/    /                \::/    /                                      ~~                      \::/____/        
-         \/____/                  \/____/                                                                ~~              
-          telegram: @ziyouoff                                                                        version: 1.4.3                             
+         \/____/                  \/____/                                                                ~~                                    
 '''
 
 ziyou_3 = '''
@@ -433,7 +432,6 @@ ziyou_3 = '''
 \/_/  /__  \ \ \  \ \____ \  \ \ \/\ \  \ \ \_\ \  
   /\_____\  \ \_\  \/\_____\  \ \_____\  \ \_____\ 
   \/_____/   \/_/   \/_____/   \/_____/   \/_____/ 
-   telegram: @ziyouoff             version: 1.4.3
                                                    
 '''
 
@@ -443,8 +441,7 @@ ziyou_4 = '''
   ███╔╝ ██║ ╚████╔╝ ██║   ██║██║   ██║
  ███╔╝  ██║  ╚██╔╝  ██║   ██║██║   ██║
 ███████╗██║   ██║   ╚██████╔╝╚██████╔╝
-╚══════╝╚═╝   ╚═╝    ╚═════╝  ╚═════╝ 
-telegram: @ziyouoff   version: 1.4.3                                     
+╚══════╝╚═╝   ╚═╝    ╚═════╝  ╚═════╝                        
 '''
 
 ziyou_5 = '''
@@ -458,7 +455,6 @@ ziyou_5 = '''
 ░ ░ ░ ░ ░ ▒ ░ ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░ 
   ░ ░     ░   ░ ░         ░ ░     ░     
 ░             ░ ░                  
-telegram: @ziyouoff      version: 1.4.3      
 '''
 
 ziyou_6 = '''
@@ -470,8 +466,6 @@ ziyou_6 = '''
 ▄███▀       ███  ███   ███ ███    ███ ███    ███ 
 ███▄     ▄█ ███  ███   ███ ███    ███ ███    ███ 
  ▀████████▀ █▀    ▀█████▀   ▀██████▀  ████████▀  
-  telegram: @ziyouoff           version: 1.4.3   
-                                                 
 '''
 
 ziyou_7 = '''
@@ -481,8 +475,87 @@ _      ___      ___   __   ____     ___    ___    _
   /  /     |  |     \    /   (       ) |  |   |  | 
  /  /__   _|  |_     )  /     \     /  |   \_/   | 
 (      )_(      )___/  (_______)   (____\       /__
- telegram: @ziyouoff                version: 1.4.3 
 '''
+
+'''
+  
+       
+    
+       
+      
+        
+     
+           
+
+
+
+
+
+
+  
+   
+   
+  
+     
+      
+          
+'''
+
+def primt_PC_baner_old():
+  console = Console()
+  console.print('[blue]                .-  :                   [/blue][yellow]          _____                    _____                _____                   _______                   _____                          [/yellow]')   
+  console.print('[blue]                 :*.:*.                 [/blue][yellow]         /\    \                  /\    \              |\    \                 /::\    \                 /\    \                         [/yellow]')
+  console.print('[blue]          .+-.:=. .#+-%=                [/blue][yellow]        /::\    \                /::\    \             |:\____\               /::::\    \               /::\____\                      [/yellow]') 
+  console.print('[blue]       =%##%%%%%%%*+%%*#%-              [/blue][yellow]        \:::\    \               \:::\    \            |::|   |              /::::::\    \             /:::/    /                      [/yellow]')
+  console.print('[blue]    =#%%%%%%%%%%%%%%%%%%%%%=            [/blue][yellow]         \:::\    \               \:::\    \           |::|   |             /::::::::\    \           /:::/    /                         [/yellow]')
+  console.print('[blue]   -*%%%%#=-:...:-+#%%%%%%%%%+          [/blue][yellow]          \:::\    \               \:::\    \          |::|   |            /:::/~~\:::\    \         /:::/    /                           [/yellow]')
+  console.print('[blue]  -#%%%%:            -#%%%%%%%%-        [/blue][yellow]           \:::\    \               \:::\    \         |::|   |           /:::/    \:::\    \       /:::/    /                            [/yellow]')
+  console.print('[blue]  +%%%@:               :#%%%%  %=       [/blue][yellow]            \:::\    \              /::::\    \        |::|   |          /:::/    / \:::\    \     /:::/    /                              [/yellow]')
+  console.print('[blue]  :-%%%@.                 +%%%%%%%+     [/blue][yellow]             \:::\    \    ____    /::::::\    \       |::|___|______   /:::/____/   \:::\____\   /:::/    /      _____          [/yellow]')
+  console.print('[blue]   :@%%%*                   -*%%%%*.    [/blue][yellow]              \:::\    \  /\   \  /:::/\:::\    \      /::::::::\    \ |:::|    |     |:::|    | /:::/____/      /\    \         [/yellow]')
+  console.print('[blue]   ::*%%%#:                    =%%%%+.  [/blue][yellow]_______________\:::\____\/::\   \/:::/  \:::\____\    /::::::::::\____\|:::|____|     |:::|    ||:::|    /      /::\____\       [/yellow]')
+  console.print('[blue]     .%*%%%*-                    +%%%%: [/blue][yellow]\::::::::::::::::::/    /\:::\  /:::/    \::/    /   /:::/~~~~/~~       \:::\    \   /:::/    / |:::|____\     /:::/    /       [/yellow]')
+  console.print('[blue]         =#%%%*-                  %%#:  [/blue][yellow] \::::::::::::::::/____/  \:::\/:::/    / \/____/   /:::/    /           \:::\    \ /:::/    /   \:::\    \   /:::/    /         [/yellow]')
+  console.print('[blue]            -+#%%#+-.             -.    [/blue][yellow]  \:::\~~~~\~~~~~~         \::::::/    /           /:::/    /             \:::\    /:::/    /     \:::\    \ /:::/    /          [/yellow]')
+  console.print('[blue]                :=*%%#+:                [/blue][yellow]   \:::\    \               \::::/____/           /:::/    /               \:::\__/:::/    /       \:::\    /:::/    /            [/yellow]')
+  console.print('[blue]                    .=*%#-              [/blue][yellow]    \:::\    \               \:::\    \           \::/    /                 \::::::::/    /         \:::\__/:::/    /              [/yellow]') 
+  console.print('[blue]                        -##.            [/blue][yellow]     \:::\    \               \:::\    \           \/____/                   \::::::/    /           \::::::::/    /                [/yellow]')
+  console.print('[blue]                          -%.           [/blue][yellow]      \:::\    \               \:::\    \                                     \::::/    /             \::::::/    /                  [/yellow]')
+  console.print('[blue]                           :*           [/blue][yellow]       \:::\____\               \:::\____\                                     \::/____/               \::::/    /                    [/yellow]')
+  console.print('[blue]                            =           [/blue][yellow]        \::/    /                \::/    /                                      ~~                      \::/____/                      [/yellow]')
+  console.print('[blue]                                               [/blue][yellow]  \/____/                  \/____/                                                                ~~                                  [/yellow]')
+
+
+
+
+def print_new_pc_baner():
+    console = Console()
+    new_pc_baner = '''
+          _____                    _____                _____                   _______                   _____          
+         /\    \                  /\    \              |\    \                 /::\    \                 /\    \         
+        /::\    \                /::\    \             |:\____\               /::::\    \               /::\____\        
+        \:::\    \               \:::\    \            |::|   |              /::::::\    \             /:::/    /        
+         \:::\    \               \:::\    \           |::|   |             /::::::::\    \           /:::/    /         
+          \:::\    \               \:::\    \          |::|   |            /:::/~~\:::\    \         /:::/    /          
+           \:::\    \               \:::\    \         |::|   |           /:::/    \:::\    \       /:::/    /           
+            \:::\    \              /::::\    \        |::|   |          /:::/    / \:::\    \     /:::/    /            
+             \:::\    \    ____    /::::::\    \       |::|___|______   /:::/____/   \:::\____\   /:::/    /      _____  
+              \:::\    \  /\   \  /:::/\:::\    \      /::::::::\    \ |:::|    |     |:::|    | /:::/____/      /\    \ 
+_______________\:::\____\/::\   \/:::/  \:::\____\    /::::::::::\____\|:::|____|     |:::|    ||:::|    /      /::\____\ 
+\::::::::::::::::::/    /\:::\  /:::/    \::/    /   /:::/~~~~/~~       \:::\    \   /:::/    / |:::|____\     /:::/    /
+ \::::::::::::::::/____/  \:::\/:::/    / \/____/   /:::/    /           \:::\    \ /:::/    /   \:::\    \   /:::/    / 
+  \:::\~~~~\~~~~~~         \::::::/    /           /:::/    /             \:::\    /:::/    /     \:::\    \ /:::/    /  
+   \:::\    \               \::::/____/           /:::/    /               \:::\__/:::/    /       \:::\    /:::/    /   
+    \:::\    \               \:::\    \           \::/    /                 \::::::::/    /         \:::\__/:::/    /    
+     \:::\    \               \:::\    \           \/____/                   \::::::/    /           \::::::::/    /     
+      \:::\    \               \:::\    \                                     \::::/    /             \::::::/    /      
+       \:::\____\               \:::\____\                                     \::/____/               \::::/    /       
+        \::/    /                \::/    /                                      ~~                      \::/____/        
+         \/____/                  \/____/                                                                ~~              
+                                                                                                                         
+    '''       
+                                      
+
 
 RTX4090 = '''
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -524,27 +597,59 @@ RTX4090 = '''
 
 '''
 
+under_baner_info = '''
+╔══════════════════════════════╦═════════════════════════╗
+║    Telegram: @ZiYou_off      ║     Version >> 1.6.1    ║
+╚══════════════════════════════╩═════════════════════════╝
+'''
+
+def print_new_pc_main_menu():
+   console = Console()
+   print_new_pc_baner()
+   console.print('╔════════════════════════════╦══════════════════════════╗', justify="center", style="yellow")
+   console.print('║   Telegram: @ZiYou_off     ║      Version >> 1.7.0    ║', justify="center", style="yellow")
+   console.print('╠════════════════════════════╬══════════════════════════╣', justify="center", style="yellow")
+   console.print('╠(e) - exit                  ╠(i) - info                ║', justify="center", style="yellow")
+   console.print('╠(s) - setings               ╠(d) - install             ║', justify="center", style="yellow")
+   console.print('╚════════════════════════════╩══════════════════════════╝', justify="center", style="yellow")
+   console.print('╔═══════════════════════════════════════════════╗   ╔═════════════════════════════╗', justify="center", style="cyan")
+   console.print('║                  TSP брутфорс                 ║   ║        Пробив по базам      ║', justify="center", style="blue")
+   console.print('╠════════════════════════╦══════════════════════╣   ╠═════════════════════════════╣', justify="center", style="cyan")
+   console.print('╠[1] - FTP(21)           ╠[7] - IMAP(143)       ║   ╠[13] - По номеру             ║', justify="center", style="blue")
+   console.print('╠[2] - SSH(22)           ╠[8] - POP3(110)       ║   ╠[14] - По Telegram Username  ║', justify="center", style="cyan")
+   console.print('╠[3] - TeleNET(23)       ╠[9] - MS SQL(1433)    ║   ╠[16] - По имени              ║', justify="center", style="blue")
+   console.print('╠[4] - DNS(53)           ╠[10] - MS SQL(1434)   ║   ║  X   X   X   X   X   X   X  ║', justify="center", style="cyan")
+   console.print('╠[5] - HTTP(80)          ╠[11] - SMTP(25)       ║   ║    X   X   X   X   X   X    ║', justify="center", style="blue")
+   console.print('╠[6] - HTTPS(443)        ╠[12] - RPS(135)       ║   ║  X   X   X   X   X   X   X  ║', justify="center", style="cyan")
+   console.print('╚════════════════════════╩══════════════════════╝   ╚═════════════════════════════╝', justify="center", style="blue")
+
 def print_start():
     import main
     if main.data['devise'] == 'M':
       r_baner = random.randint(1, 5)
       r_ziyou = random.randint(1, 7)
 
-      if r_baner == 1: print(Center.XCenter(colored(baner_1, "blue")))
-      elif r_baner == 2: print(Center.XCenter(colored(baner_2, "white")))
-      elif r_baner == 3: print(Center.XCenter(colored(baner_3, "white")))
-      elif r_baner == 4: print(Center.XCenter(colored(baner_4, "blue")))
-      elif r_baner == 5: print(Center.XCenter(colored(baner_5, "white")))
+      console = Console()
+      if r_baner == 1: console.print(baner_1, style="blue", justify="center")
+      elif r_baner == 2: console.print(baner_2, style = "white", justify="center")
+      elif r_baner == 3: console.print(baner_3, style = "white", justify="center")
+      elif r_baner == 4: console.print(baner_4, style = "blue", justify="center")
+      elif r_baner == 5: console.print(baner_5, style = "white", justify="center")
 
-      if r_ziyou == 1: print(Center.XCenter(colored(ziyou_1, "yellow")))
-      elif r_ziyou == 2: print(Center.XCenter(colored(ziyou_2, "yellow")))
-      elif r_ziyou == 3: print(Center.XCenter(colored(ziyou_3, "cyan")))
-      elif r_ziyou == 4: print(Center.XCenter(colored(ziyou_4, "red")))
-      elif r_ziyou == 5: print(Center.XCenter(colored(ziyou_5, "green")))
-      elif r_ziyou == 6: print(Center.XCenter(colored(ziyou_6, "white")))
-      elif r_ziyou == 7: print(Center.XCenter(colored(ziyou_7, "white")))
+      if r_ziyou == 1: console.print(ziyou_1, style="yellow", justify="center")
+      elif r_ziyou == 2: console.print(ziyou_2, style="yellow", justify="center")
+      elif r_ziyou == 3: console.print(ziyou_3, style="cyan", justify="center")
+      elif r_ziyou == 4: console.print(ziyou_4, style="red", justify="center")
+      elif r_ziyou == 5: console.print(ziyou_5, style="green", justify="center")
+      elif r_ziyou == 6: console.print(ziyou_6, style="white", justify="center")
+      elif r_ziyou == 7: console.print(ziyou_7, style="white", justify="center")
+      console = Console()
+      console.print(under_baner_info, justify="center", style="yellow")
+
     elif main.data['devise'] == 'P':
-       print(colored(Add.Add(baner_4, ziyou_2), "blue"))
+       console = Console()
+       print_new_pc_baner()
+       console.print(under_baner_info, justify="center", style="yellow")
     
 
 def print_telegram_logo(): print(Center.XCenter(colored(telegram_logo, "blue")))
